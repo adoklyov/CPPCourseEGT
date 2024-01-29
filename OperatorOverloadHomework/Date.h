@@ -3,6 +3,7 @@
 #define DATE_H
 
 #include <iostream>
+using std::istream;
 using std::ostream;
 
 class Date
@@ -20,6 +21,20 @@ public:
 	Date& operator--();
 	//Postfix decrement operator
 	Date operator--(int);
+	//Operator <<
+	friend ostream& operator<<(ostream&, const Date&);
+	//Operator >>
+	friend istream& operator>>(istream&, const Date&);
+
+	//Setters and getters
+	int getDay() const;
+	int getMonth() const;
+	int getYear() const;
+
+	void setDay(int day);
+	void setMonth(int month);
+	void setYear(int year);
+	//End setters and getters
 
 private:
 	int month;

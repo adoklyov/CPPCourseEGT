@@ -1,6 +1,7 @@
 // Date class member-function definitions.
 #include <iostream>
 #include "Date.h"
+#include <iomanip>
 
 // initialize static member at file scope; one classwide copy
 const int Date::days[] =
@@ -24,41 +25,6 @@ void Date::setDate(int mm, int dd, int yy)
     else
         day = (dd >= 1 && dd <= days[month]) ? dd : 1;
 } // end function setDate
-
-
-//Homework Task Code Begins Here--------------------------------------------
-//overloaded prefix decrement operator
-Date& Date::operator--()
-{
-	//if day is not the first day of the month
-	if (day != 1)
-		day--; //decrement day
-    else
-    {
-		//if month is not January
-        if (month != 1)
-        {
-			month--; //decrement month
-			day = days[month]; //set day to last day of previous month
-		}
-        else
-        {
-			year--; //decrement year
-			month = 12; //set month to December
-			day = days[month]; //set day to last day of December
-		}
-	}
-	return *this; //enables cascading
-}
-
-//overloaded postfix decrement operator
-Date Date::operator--(int)
-{
-	Date temp = *this; //hold current state of object
-	--* this; //decrement date
-	return temp; //return unincremented, saved, temporary object
-}
-//Homework Task Code Ends Here----------------------------------------------
 
 // overloaded prefix increment operator 
 Date& Date::operator++()
@@ -127,7 +93,7 @@ void Date::helpIncrement()
 } // end function helpIncrement
 
 // overloaded output operator
-ostream& operator<<(ostream& output, const Date& d)
+/*ostream& operator<<(ostream& output, const Date& d)
 {
     static const char* monthName[13] = { "", "January", "February",
        "March", "April", "May", "June", "July", "August",
@@ -135,3 +101,80 @@ ostream& operator<<(ostream& output, const Date& d)
     output << monthName[d.month] << ' ' << d.day << ", " << d.year;
     return output; // enables cascading
 } // end function operator<<
+*/
+
+
+//Homework Task Code Begins Here--------------------------------------------
+//Overloaded prefix decrement operator
+Date& Date::operator--()
+{
+    //if day is not the first day of the month
+    if (day != 1)
+        day--; //decrement day
+    else
+    {
+        //if month is not January
+        if (month != 1)
+        {
+            month--; //decrement month
+            day = days[month]; //set day to last day of previous month
+        }
+        else
+        {
+            year--; //decrement year
+            month = 12; //set month to December
+            day = days[month]; //set day to last day of December
+        }
+    }
+    return *this; //enables cascading
+}
+
+//Overloaded postfix decrement operator
+Date Date::operator--(int)
+{
+    Date temp = *this; //hold current state of object
+    --*this; //decrement date
+    return temp; //return unincremented, saved, temporary object
+}
+
+//Getter and setter implementations
+int Date::getMonth() const
+{
+    return month;
+}
+
+int Date::getDay() const
+{
+    return day;
+}
+
+int Date::getYear() const
+{
+    return year;
+}
+
+void Date::setMonth(int m)
+{
+    month = m;
+}
+
+void Date::setDay(int d)
+{
+    day = d;
+}
+
+void Date::setYear(int y)
+{
+    year = y;
+}
+
+//End of getter and setter implementations
+
+//Overload << operator 
+ostream& operator<<(ostream& os, const Date& d) {
+    os << std::setw(2) << std::setfill('0') << d.getDay() << '-'
+        << std::setw(2) << std::setfill('0') << d.getMonth() << '-'
+        << std::setw(2) << d.getYear() % 100;  // Modulo 100 for last two digits of year
+    return os;
+}
+//Homework Task Code Ends Here----------------------------------------------

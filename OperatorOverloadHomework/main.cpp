@@ -39,6 +39,9 @@ int main()
     cout << "d4-- is " << d4-- << endl;
     cout << "  d4 is " << d4 << endl;
 
+    cout << "\nTesting << operator:" << endl;
+    cout << "d1 is " << d1 << "\nd2 is " << d2 << "\nd3 is " << d3;
+
     cout << endl;
 
     return 0;
