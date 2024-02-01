@@ -6,10 +6,11 @@
 class Cat : public Animal
 {
 public:
+	//Constructor
 	Cat(string name);
-	virtual ~Cat();
 
+	//Method
 	void speak() override;
 };
 
-#endif // !CAT_H
+#endif 

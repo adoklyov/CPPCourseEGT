@@ -4,14 +4,19 @@ using namespace std;
 
 int main()
 {
-	int n;
-	cin >> n;
+	int amount, number;
+	cin >> amount;
 
-	if (n % 2 == 0) {
-		cout << n << " is even." << endl;
-	}
-	else {
-		cout << n << " is odd." << endl;
+	//Loop for the amount of numbers
+	for (int i = 0; i < amount; i++)
+	{
+		cin >> number;
+
+		//Checks if the number is even or odd
+		if (number % 2 == 0)
+			cout << "even" << endl;
+		else
+			cout << "odd" << endl;
 	}
 
 	return 0;

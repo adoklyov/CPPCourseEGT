@@ -10,14 +10,14 @@ int main()
 {
 	//Animal pointer
 	Animal* animal;
-	
+
 	//Dog created and speak called
-	animal = new Dog("Darius") ;
+	animal = new Dog("Darius");
 	animal->speak();
 	delete animal;
 
 	//Cat created and speak called
-	animal  = new Cat("Mimi");
+	animal = new Cat("Mimi");
 	animal->speak();
 	delete animal;
 

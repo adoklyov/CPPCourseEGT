@@ -1,11 +1,24 @@
 #include "Customer.h"
-#include <iostream>
 
+
+//Constructor
 Customer::Customer(string username) : username(username)
 {
 
 }
 
+//Getters and setters
+string Customer::getUsername()
+{
+	return username;
+}
+
+void Customer::setUsername(string username)
+{
+	this->username = username;
+}
+
+//Methods
 void Customer::addOrder(Order& order)
 {
 	orders.push_back(order);

@@ -8,13 +8,16 @@ using namespace std;
 class Animal
 {
 public:
+	//Constructor
 	Animal(string name);
-	virtual ~Animal();
 
+	//Method
 	virtual void speak();
 
+	//Getters and setters
 	void setName(string name);
 	string getName();
+
 protected:
 	string name;
 };

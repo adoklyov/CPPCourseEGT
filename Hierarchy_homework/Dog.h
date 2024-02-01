@@ -6,9 +6,10 @@
 class Dog : public Animal
 {
 public:
+	//Constructor
 	Dog(string name);
-	virtual ~Dog();
 
+	//Method
 	void speak() override;
 };
 

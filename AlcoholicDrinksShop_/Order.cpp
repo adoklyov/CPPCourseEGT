@@ -1,16 +1,32 @@
 #include "Order.h"
-#include <iostream>
-#include <vector>
 
+
+//Constructor
 Order::Order(vector<Drinks*> drinks, string date) {
 	this->date = date;
 	this->drinks = drinks;
 }
 
+//Getters and setters
+string Order::getDate() {
+	return date;
+}
+
+void Order::setDate(string date) {
+	this->date = date;
+}
+
+
 vector<Drinks*> Order::getDrinks() {
 	return drinks;
 }
 
+void Order::setDrinks(vector<Drinks*> drinks) {
+	this->drinks = drinks;
+}
+
+
+//Methods
 double Order::calculateTotalPrice()
 {
 	double totalPrice = 0;

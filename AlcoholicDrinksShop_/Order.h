@@ -2,9 +2,6 @@
 #define ORDER_H
 
 #include "Drinks.h"
-#include "Alcoholic.h"
-#include "NonAlcoholic.h"
-#include <iostream>
 #include <string>
 #include <vector>
 
@@ -14,16 +11,24 @@ class Order
 {
 public:
 
+	//Constructor
+	Order(vector<Drinks*> drinks, string date);
+
+	//Methods
 	double calculateTotalPrice();
 	void print();
 	
-	Order(vector<Drinks*> drinks, string date);
+	//Getters and setters
+	void setDrinks(vector<Drinks*> drinks);
+	void setDate(string date);
 
+	string getDate();	
 	vector<Drinks*> getDrinks();
 
 private:
+
 	vector<Drinks*> drinks;
 	string date;
 };
 
-#endif // !ORDER_H
+#endif 

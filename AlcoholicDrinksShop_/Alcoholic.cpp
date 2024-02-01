@@ -1,5 +1,6 @@
 #include "Alcoholic.h"
 
+//Constructor
 Alcoholic::Alcoholic(string name, double price, int quantity, double volume, double tax)
 {
 	this->name = name;
@@ -10,6 +11,29 @@ Alcoholic::Alcoholic(string name, double price, int quantity, double volume, dou
 
 }
 
+//Getters and setters
+double Alcoholic::getVolume()
+{
+	return volume;
+}
+
+void Alcoholic::setVolume(double volume)
+{
+	this->volume = volume;
+}
+
+double Alcoholic::getTax()
+{
+	return tax;
+}
+
+void Alcoholic::setTax(double tax)
+{
+	this->tax = tax;
+}
+
+
+//Methods
 double Alcoholic::calculatePrice()
 {
 	return quantity * (price * tax);

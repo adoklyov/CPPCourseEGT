@@ -1,13 +1,7 @@
 #include "Box.h"
-#include <iostream>
 
-using namespace std;
-
-Box::Box(double w, double l, double h)
-{
-
-}
-
+//Constructor
+Box::Box(double w, double l, double h) {}
 
 //Setters and Getters
 void Box::setHeight(double h)

@@ -1,16 +1,11 @@
 #include "Cat.h"
 #include <iostream>
 
-Cat::Cat(string name) : Animal(name)
-{
 
-}
+//Constructor
+Cat::Cat(string name) : Animal(name) {}
 
-Cat::~Cat()
-{
-
-}
-
+//Method
 void Cat::speak()
 {
 	cout << "Cat noise." << getName() << endl;

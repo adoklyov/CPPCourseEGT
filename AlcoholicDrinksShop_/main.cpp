@@ -30,12 +30,6 @@ int main() {
 
 	shop.displayCustomers();
 
-	//shop.addCustomer(customer1);
-
-	//shop.displayCustomers();
-
-	/*cout << "Alcoholic drinks sold:" << shop.typeOfDrinksSold("Alcoholic") << endl;
-	cout << "Non alcoholic drinks sold:" << shop.typeOfDrinksSold("NonAlcoholic") << endl;*/
 
 	return 0;
 }
