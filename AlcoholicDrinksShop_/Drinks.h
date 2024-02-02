@@ -9,8 +9,12 @@ using namespace std;
 class Drinks
 {
 public:
+
 	//Constructor
-	Drinks(string name, double price, int quantity);
+	Drinks(string name, double price, int quantity, string type);
+
+	//Destructor
+	virtual ~Drinks();
 
 	//Methods
 	virtual double calculatePrice() = 0;
@@ -26,9 +30,12 @@ public:
 	int getQuantity();
 
 protected:
+
+	//Attributes
 	string name;
 	double price;
 	int quantity;
+	string type;
 
 };
 

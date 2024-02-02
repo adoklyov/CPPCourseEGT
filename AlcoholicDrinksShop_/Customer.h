@@ -1,4 +1,4 @@
-#ifndef CUSTOMER_H
+#i#ifndef CUSTOMER_H
 #define CUSTOMER_H
 
 #include "Order.h"
@@ -10,13 +10,14 @@ using namespace std;
 class Customer
 {
 public:
+
 	//Constructor
 	Customer(string username);
 
 	//Methods
 	void addOrder(Order& order);
 	void displayOrder();
-	vector<Order> getOrders();
+	double calculateTotalPrice();
 
 	//Getters and setters
 	string getUsername();
@@ -24,6 +25,7 @@ public:
 
 private:
 
+	//Attributes
 	string username;
 	vector<Order> orders;
 };

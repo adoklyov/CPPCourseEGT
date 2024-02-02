@@ -9,20 +9,15 @@ class Alcoholic : public Drinks
 public:
 
 	//Constructor
-	Alcoholic(string name, double price, int quantity, double volume, double tax);
+	Alcoholic(string name, double price, int quantity, string type, double volume, double tax);
 
-	//Overriden methods
+	//Methods
 	double calculatePrice() override;
 	void print() override;
 
-	//Getters and Setters
-	void setVolume(double volume);
-	void setTax(double tax);
-
-	double getVolume();
-	double getTax();
-
 private:
+
+	//Attributes
 	double volume;
 	double tax;
 };

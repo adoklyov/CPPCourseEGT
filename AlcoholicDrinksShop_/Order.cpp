@@ -1,46 +1,36 @@
 #include "Order.h"
+#include <iostream>
 
 
 //Constructor
 Order::Order(vector<Drinks*> drinks, string date) {
-	this->date = date;
 	this->drinks = drinks;
-}
-
-//Getters and setters
-string Order::getDate() {
-	return date;
-}
-
-void Order::setDate(string date) {
 	this->date = date;
 }
 
-
-vector<Drinks*> Order::getDrinks() {
-	return drinks;
+Order::Order() {
 }
-
-void Order::setDrinks(vector<Drinks*> drinks) {
-	this->drinks = drinks;
-}
-
 
 //Methods
-double Order::calculateTotalPrice()
-{
+
+//Method to add a drink to the order
+void Order::addDrink(Drinks* drink) {
+	drinks.push_back(drink);
+}
+
+//Method to calculate the total price of the order
+double Order::calculateTotalPrice() {
 	double totalPrice = 0;
-	for (auto& drink : drinks) {
-		totalPrice += drink->getPrice();
+	for (int i = 0; i < drinks.size(); i++) {
+		totalPrice += drinks[i]->calculatePrice();
 	}
 	return totalPrice;
 }
 
-void Order::print()
-{
-	cout << "Date: " << date << endl;
-	for (auto& drink : drinks) {
+
+//Method to print the order
+void Order::printOrder() {
+	for (Drinks* drink : drinks) {
 		drink->print();
 	}
-	cout << "Total price: " << calculateTotalPrice() << endl;
 }

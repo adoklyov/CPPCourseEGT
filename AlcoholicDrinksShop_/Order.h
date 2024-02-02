@@ -13,20 +13,16 @@ public:
 
 	//Constructor
 	Order(vector<Drinks*> drinks, string date);
+	Order();
 
 	//Methods
 	double calculateTotalPrice();
-	void print();
-	
-	//Getters and setters
-	void setDrinks(vector<Drinks*> drinks);
-	void setDate(string date);
-
-	string getDate();	
-	vector<Drinks*> getDrinks();
+	void addDrink(Drinks* drink);
+	void printOrder();
 
 private:
 
+	//Attributes
 	vector<Drinks*> drinks;
 	string date;
 };

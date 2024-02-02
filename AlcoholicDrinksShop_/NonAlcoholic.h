@@ -7,21 +7,17 @@
 class NonAlcoholic : public Drinks
 {
 public:
+
 	//Constructor
-	NonAlcoholic(string name, double price, int quantity, double litres, double cityTax);
-	
+	NonAlcoholic(string name, double price, int quantity, string type, double litres, double cityTax);
+
 	//Methods
 	double calculatePrice() override;
 	void print() override;
 
-	//Getters and setters
-	void setLitres(double litres);
-	void setCityTax(double cityTax);
-
-	double getLitres();
-	double getCityTax();
-
 private:
+
+	//Attributes
 	double litres;
 	double cityTax;
 };
