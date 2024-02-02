@@ -11,12 +11,12 @@ int main()
 	//Animal pointer
 	Animal* animal;
 
-	//Dog created and speak called
+	//Dog created and speak method called
 	animal = new Dog("Darius");
 	animal->speak();
 	delete animal;
 
-	//Cat created and speak called
+	//Cat created and speak method called
 	animal = new Cat("Mimi");
 	animal->speak();
 	delete animal;

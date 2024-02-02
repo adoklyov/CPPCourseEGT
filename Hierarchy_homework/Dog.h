@@ -6,6 +6,7 @@
 class Dog : public Animal
 {
 public:
+
 	//Constructor
 	Dog(string name);
 

@@ -8,6 +8,7 @@ using namespace std;
 class Animal
 {
 public:
+
 	//Constructor
 	Animal(string name);
 
@@ -19,6 +20,8 @@ public:
 	string getName();
 
 protected:
+
+	//Attributes
 	string name;
 };
 

@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+	//User inputs the amount of numbers
 	int amount, number;
 	cin >> amount;
 

@@ -18,7 +18,7 @@ string Animal::getName()
 	return name;
 }
 
-//Method
+//Method to print an animal noise
 void Animal::speak()
 {
 	cout << "Animal sound." << endl;

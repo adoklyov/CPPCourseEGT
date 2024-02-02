@@ -6,11 +6,13 @@
 class Cat : public Animal
 {
 public:
+
 	//Constructor
 	Cat(string name);
 
 	//Method
 	void speak() override;
+
 };
 
 #endif 

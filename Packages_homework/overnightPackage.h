@@ -1,28 +1,22 @@
 #ifndef OVERNIGHTPACKAGE_H
 #define OVERNIGHTPACKAGE_H
-#include "package.h"
-#include <iostream>
 
-using namespace std;
+#include "Package.h"
 
-class overnightPackage : public Package {
+class OvernightPackage : public Package {
 
 public:
 
     //Constructor
-    overnightPackage(const string&, const string&, const string&, const string&, const string&,
-        const string&, const string&, const string&, const string&, const string&, double, double, double);
+    OvernightPackage(string senderAddress, string recipientAddress, double weight, double costPerKg, double extraFee);
 
     //Methods
     double calculateCost() const override;
-    virtual void print() const;
-
-    //Getters and setters
-    double getFeePerOunce() const;
-    void setFeePerOunce(double fpounce);
 
 private:
-    double feePerOunce;
+
+    //Attributes
+    double extraFeePerKg;
 };
 
 #endif
