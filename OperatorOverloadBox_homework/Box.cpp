@@ -1,12 +1,17 @@
 #include "Box.h"
 
 //Constructor
-Box::Box(double w, double l, double h) {}
+Box::Box(double width, double length, double height)
+{
+	this->width = width;
+	this->length = length;
+	this->height = height;
+}
 
 //Setters and Getters
-void Box::setHeight(double h)
+void Box::setHeight(double height)
 {
-	height = h;
+	this->height = height;
 }
 
 double Box::getHeight() const
@@ -14,9 +19,9 @@ double Box::getHeight() const
 	return height;
 }
 
-void Box::setWidth(double w)
+void Box::setWidth(double width)
 {
-	width = w;
+	this->width = width;
 }
 
 double Box::getWidth() const
@@ -24,9 +29,9 @@ double Box::getWidth() const
 	return width;
 }
 
-void Box::setLength(double l)
+void Box::setLength(double length)
 {
-	length = l;
+	this->length = length;
 }
 
 double Box::getLength() const
@@ -35,3 +40,13 @@ double Box::getLength() const
 }
 
 //Operator
+
+//Overloaded addition operator
+Box Box::operator+(const Box& box) const
+{
+	Box testBox(0, 0, 0);
+	testBox.setHeight(this->height + box.height);
+	testBox.setLength(this->length + box.length);
+	testBox.setWidth(this->width + box.width);
+	return testBox;
+}

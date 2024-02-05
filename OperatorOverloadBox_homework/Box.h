@@ -14,10 +14,13 @@ public:
 	double getWidth() const;
 	double getLength() const;
 	double getHeight() const;
-	
+
 	//Operator
+	Box operator+(const Box& box) const;
 
 private:
+
+	//Attributes
 	double width;
 	double length;
 	double height;
