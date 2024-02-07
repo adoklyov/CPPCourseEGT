@@ -8,7 +8,6 @@ using std::ostream;
 
 class Date
 {
-	friend ostream& operator<<(ostream&, const Date&);
 public:
 	Date(int m = 1, int d = 1, int y = 1900); // default constructor
 	void setDate(int, int, int); // set month, day, year
@@ -24,7 +23,7 @@ public:
 	//Operator <<
 	friend ostream& operator<<(ostream&, const Date&);
 	//Operator >>
-	friend istream& operator>>(istream&, const Date&);
+	friend istream& operator>>(istream&, Date&);
 
 	//Setters and getters
 	int getDay() const;

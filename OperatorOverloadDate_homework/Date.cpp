@@ -2,6 +2,9 @@
 #include <iostream>
 #include "Date.h"
 #include <iomanip>
+#include <sstream>
+
+using namespace std;
 
 // initialize static member at file scope; one classwide copy
 const int Date::days[] =
@@ -177,4 +180,31 @@ ostream& operator<<(ostream& os, const Date& d) {
         << std::setw(2) << d.getYear() % 100;  // Modulo 100 for last two digits of year
     return os;
 }
-//Homework Task Code Ends Here----------------------------------------------
+
+//Overload >> operator
+istream& operator>>(istream& is, Date& d) {
+    string date;
+    if (getline(is, date, '\n')) {
+        istringstream dateStream(date);
+        int day, month, year;
+        char dash1, dash2;
+
+        if (dateStream) {
+            dateStream >> day >> dash1 >> month >> dash2 >> year;
+            if (dateStream && dash1 == '-' && dash2 == '-') {
+                d.setDay(day);
+                d.setMonth(month);
+                d.setYear(year);
+            }
+            else {
+                is.setstate(ios::failbit);
+            }
+        }
+        else {
+            is.setstate(ios::failbit);
+        }
+
+    }
+    return is;
+}
+//Homework Task Code Ends Here---------------------------------------------

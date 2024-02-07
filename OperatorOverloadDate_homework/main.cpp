@@ -1,9 +1,8 @@
 // Date class test program.
 #include <iostream>
-using std::cout;
-using std::endl;
-
 #include "Date.h" // Date class definition
+
+using namespace std;
 
 int main()
 {
@@ -31,7 +30,7 @@ int main()
     cout << "  d4 is " << d4 << endl;
 
     cout << "\n\nTesting the prefix decrement operator:\n"
-		<< "  d4 is " << d4 << endl;
+        << "  d4 is " << d4 << endl;
     cout << "--d4 is " << --d4 << endl;
 
     cout << "\n\nTesting the postfix decrement operator:\n"
@@ -41,6 +40,12 @@ int main()
 
     cout << "\nTesting << operator:" << endl;
     cout << "d1 is " << d1 << "\nd2 is " << d2 << "\nd3 is " << d3;
+
+    cout << "\nTesting >> operator:" << endl;
+    Date d5;
+    cout << "Please enter a date in dd-mm-yyyy format: ";
+    cin >> d5;
+    cout << "You entered: " << d5 << endl;
 
     cout << endl;
 
