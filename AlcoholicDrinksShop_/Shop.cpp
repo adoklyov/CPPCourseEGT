@@ -26,3 +26,19 @@ void Shop::drinkByType() {
 	}
 }
 
+//Method which counts the best customer with the most expensive drink
+Customer Shop::getBestCustomer() {
+	Customer bestCustomer = customers[0];
+	double maxPrice = 0;
+	for (Customer& customer : customers) {
+		for (Order& order : customer.getOrders()) {
+			for (Drinks* drink : order.getDrinks()) {
+				if (drink->calculatePrice() > maxPrice) {
+					maxPrice = drink->calculatePrice();
+					bestCustomer = customer;
+				}
+			}
+		}
+	}
+	return bestCustomer;
+}

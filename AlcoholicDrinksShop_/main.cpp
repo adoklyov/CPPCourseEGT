@@ -37,6 +37,9 @@ int main() {
     Shop shop(customers);
     shop.drinkByType();
 
+    //Display the best customer test
+    cout << "The best customer is: " << shop.getBestCustomer().getUsername() << endl;
+
     return 0;
 
 }
