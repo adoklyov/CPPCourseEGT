@@ -21,13 +21,20 @@ void Customer::setUsername(string username)
     this->username = username;
 }
 
+vector<Order>& Customer::getOrders()
+{
+    return orders;
+}
+
+//Methods
+
 //Method to add an order to the customer
 void Customer::addOrder(Order& order)
 {
     orders.push_back(order);
 }
 
-// Method to display the orders of the customer
+//Method to display the orders of the customer
 void Customer::displayOrder() {
     std::cout << "Customer: " << username << std::endl;
     for (Order& order : orders) {
@@ -36,7 +43,7 @@ void Customer::displayOrder() {
     std::cout << "--------------------------" << std::endl;
 }
 
-// Method to calculate the total price of the orders
+//Method to calculate the total price of the orders
 double Customer::calculateTotalPrice() {
     double totalPrice = 0;
     for (auto& order : orders) {

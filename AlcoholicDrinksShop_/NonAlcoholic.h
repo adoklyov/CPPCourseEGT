@@ -2,7 +2,7 @@
 #define NONALCOHOLIC_H
 
 #include "Drinks.h"
-
+#include <string>
 
 class NonAlcoholic : public Drinks
 {
@@ -20,6 +20,7 @@ private:
 	//Attributes
 	double litres;
 	double cityTax;
+
 };
 
 #endif 

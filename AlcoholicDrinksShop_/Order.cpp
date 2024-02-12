@@ -34,3 +34,8 @@ void Order::printOrder() {
 		drink->print();
 	}
 }
+
+//Method to get the drinks of the order
+vector<Drinks*>& Order::getDrinks() {
+	return drinks;
+}

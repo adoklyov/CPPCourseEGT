@@ -6,23 +6,21 @@
 
 class Shop {
 public:
+
 	//Constructor 
-	Shop(string name);
+	Shop(vector<Customer>& customer);
 
 	//Methods
-	void addCustomer(Customer& customer);
-	void displayCustomers();
-
-	//Getters and setters
-	string getName();
-	void setName(string name);
-	vector<Customer>& getCustomers();
-	void setCustomers(vector<Customer>& customers);
+	void drinkByType();
+	Customer getBestCustomer();
+	vector<Customer> getCustomerDrinkType(string& type);
+	vector<Customer> getTop10Customers();
 
 private:
 
-	string name;
+	//Attributes
 	vector<Customer> customers;
+
 };
 
 #endif 

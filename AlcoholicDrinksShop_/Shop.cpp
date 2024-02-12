@@ -1,45 +1,28 @@
 #include "Shop.h"
-
+#include <iostream>
+#include <algorithm>
+#include <map>
 
 //Constructor
-Shop::Shop(string name) 
+Shop::Shop(vector<Customer>& customer)
 {
-	this->name = name;
-}
-
-//Getters and setters
-string Shop::getName()
-{
-	return name;
-}
-
-void Shop::setName(string name)
-{
-	this->name = name;
-}
-
-vector<Customer>& Shop::getCustomers() 
-{
-	return customers;
-}
-
-void Shop::setCustomers(vector<Customer>& customers)
-{
-	this->customers = customers;
+	this->customers = customer;
 }
 
 //Methods
-void Shop::addCustomer(Customer& customer)
-{
-	customers.push_back(customer);
-}
 
-void Shop::displayCustomers()
-{
-	cout << "Shop: " << name << endl;
-	cout << "--------------------------" << endl;
-	for (auto& customer : customers) {
-		customer.displayOrder();	
+//Method to display the drinks of a specific type
+void Shop::drinkByType() {
+	map<string, vector<Customer>> customerDrinkType;
+	for (Customer& customer : customers) {
+		for (Order& order : customer.getOrders()) {
+			for (Drinks* drink : order.getDrinks()) {
+				customerDrinkType[drink->getType()].push_back(customer);
+			}
+		}
+	}
+	for (auto& pair : customerDrinkType) {
+		cout << "Type: " << pair.first << endl;
 	}
 }
 

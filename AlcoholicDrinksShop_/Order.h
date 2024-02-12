@@ -17,6 +17,7 @@ public:
 
 	//Methods
 	double calculateTotalPrice();
+	vector<Drinks*>& getDrinks();
 	void addDrink(Drinks* drink);
 	void printOrder();
 

@@ -24,10 +24,12 @@ public:
 	void setName(string name);
 	void setPrice(double price);
 	void setQuantity(int quantity);
+	void setType(string type);
 
 	string getName();
 	double getPrice();
 	int getQuantity();
+	string getType();
 
 protected:
 
@@ -38,5 +40,7 @@ protected:
 	string type;
 
 };
+
+#endif 
 
 #endif 

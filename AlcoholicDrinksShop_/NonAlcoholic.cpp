@@ -9,6 +9,8 @@ NonAlcoholic::NonAlcoholic(string name, double price, int quantity, string type,
 }
 
 //Methods
+
+//Method to print the drink
 void NonAlcoholic::print()
 {
 	Drinks::print();

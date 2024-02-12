@@ -31,6 +31,11 @@ int Drinks::getQuantity()
 	return quantity;
 }
 
+string Drinks::getType()
+{
+	return type;
+}
+
 void Drinks::setName(string name)
 {
 	this->name = name;
@@ -44,6 +49,11 @@ void Drinks::setPrice(double price)
 void Drinks::setQuantity(int quantity)
 {
 	this->quantity = quantity;
+}
+
+void Drinks::setType(string type)
+{
+	this->type = type;
 }
 
 //Methods

@@ -1,4 +1,4 @@
-#i#ifndef CUSTOMER_H
+#ifndef CUSTOMER_H
 #define CUSTOMER_H
 
 #include "Order.h"
@@ -20,7 +20,9 @@ public:
 	double calculateTotalPrice();
 
 	//Getters and setters
+	vector<Order>& getOrders();
 	string getUsername();
+
 	void setUsername(string username);
 
 private:
@@ -28,6 +30,7 @@ private:
 	//Attributes
 	string username;
 	vector<Order> orders;
+
 };
 #endif 
 
