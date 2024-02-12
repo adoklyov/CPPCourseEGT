@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<EmployeesData FormatVersion="1">
+	<Employees>
+		<Employee Name="John" Type ="Part-Time" Age="23">
+		</Employee>
+		<Employee Name="Ivan" Type ="Sometimes" Age="33">
+		</Employee>
+		<Employee Name="Pena" Type ="Full-Time" Age="77">
+		</Employee>
+	</Employees>
+</EmployeesData>
