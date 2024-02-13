@@ -49,6 +49,15 @@ int main() {
     }
     cout << endl;
 
+    /*Display the top 10 customers
+    vector<Customer> top10Customers = shop.getTop10Customers();
+    cout << "Top 10 customers: ";
+    for (size_t i = 0; i < top10Customers.size() && i < 10; ++i) {
+        cout << top10Customers[i].getUsername() << " ";
+     }
+        cout << endl;
+    */
+
     return 0;
 
 }
