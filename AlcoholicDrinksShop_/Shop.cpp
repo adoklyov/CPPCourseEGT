@@ -42,3 +42,18 @@ Customer Shop::getBestCustomer() {
 	}
 	return bestCustomer;
 }
+
+//Method which returns all customers with orders containing a drink of a given type
+vector<Customer> Shop::getCustomerDrinkType(string& type) {
+	vector<Customer> customerDrinkType;
+	for (Customer& customer : customers) {
+		for (Order& order : customer.getOrders()) {
+			for (Drinks* drink : order.getDrinks()) {
+				if (drink->getType() == type) {
+					customerDrinkType.push_back(customer);
+				}
+			}
+		}
+	}
+	return customerDrinkType;
+}

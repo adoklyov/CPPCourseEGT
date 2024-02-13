@@ -40,6 +40,15 @@ int main() {
     //Display the best customer test
     cout << "The best customer is: " << shop.getBestCustomer().getUsername() << endl;
 
+    //Display customers with orders containing a drink of a given type
+    string type = "Coffee";
+    vector<Customer> customersWithDrinkType = shop.getCustomerDrinkType(type);
+    cout << "Customers with orders containing " << type << ": ";
+    for (Customer& customer : customersWithDrinkType) {
+        cout << customer.getUsername() << " ";
+    }
+    cout << endl;
+
     return 0;
 
 }
