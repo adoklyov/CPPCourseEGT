@@ -39,12 +39,13 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 
 				SDL_QueryTexture(texture, NULL, NULL, &sourceRectangle.w, &sourceRectangle.h);
 
-
+				//Set the source rectangle
 				sourceRectangle.x = 69;
 				sourceRectangle.y = 103;
 				sourceRectangle.w = 55;
 				sourceRectangle.h = 55;
 
+				//Set the destination rectangle
 				destinationRectangle.x = 0;
 				destinationRectangle.y = 0;
 				destinationRectangle.w = 110;
