@@ -4,6 +4,7 @@
 //Constructor
 Game::Game() {
 
+	Game::currentQuadrant = -1;
 	Game::gameWindow = NULL;
 	Game::gameRenderer = NULL;
 	Game::running = true;
@@ -28,9 +29,9 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 			if (gameRenderer != 0)
 			{
 
-				SDL_SetRenderDrawColor(gameRenderer, 0, 0, 0, 0);
+				SDL_SetRenderDrawColor(gameRenderer, 255, 255, 255, 255);
 
-				SDL_Surface* tempSurface = SDL_LoadBMP("C:/Users/Doklyov/Desktop/IChernevTask/SDLTask5/assets/images/yalla.bmp");
+				SDL_Surface* tempSurface = SDL_LoadBMP("C:/Users/Doklyov/Desktop/IChernevTask/SDLTask5/assets/images/cat.bmp");
 
 				texture = SDL_CreateTextureFromSurface(gameRenderer, tempSurface);
 
@@ -73,51 +74,77 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 
 }
 
+
+//Task 5 Changes
 //Render the game objects
 void Game::render() {
-
 	SDL_RenderClear(gameRenderer);
 
-	SDL_RenderCopy(gameRenderer, texture, &sourceRectangle, &destinationRectangle);
+	//Render quadrant if it is active
+	if (currentQuadrant >= 0) {
+		int windowWidth, windowHeight;
+		SDL_GetWindowSize(gameWindow, &windowWidth, &windowHeight);
+
+		//Calculate destination based on the current quadrant
+		SDL_Rect destRect = destinationRectangle;
+		switch (currentQuadrant) {
+			//Top Left Quadrant
+		case 0:
+			destRect.x = 0;
+			destRect.y = 0;
+			break;
+			//Top Right Quadrant
+		case 1:
+			destRect.x = windowWidth / 2;
+			destRect.y = 0;
+			break;
+			//Bottom Left Quadrant
+		case 2:
+			destRect.x = 0;
+			destRect.y = windowHeight / 2;
+			break;
+			//Bottom Right Quadrant
+		case 3:
+			destRect.x = windowWidth / 2;
+			destRect.y = windowHeight / 2;
+			break;
+		}
+
+
+		SDL_RenderCopy(gameRenderer, texture, NULL, &destRect);
+	}
 
 	SDL_RenderPresent(gameRenderer);
 }
 
+
 //Processes events
 void Game::handleEvents() {
-
 	SDL_Event event;
-	if (SDL_PollEvent(&event)) {
-		switch (event.type) {
-		case SDL_QUIT: running = false; break;
-		default: break;
-		case SDL_MOUSEBUTTONDOWN:
-			//Task 5 Changes
-			//Get the mouse position
-			int x, y;
-			SDL_GetMouseState(&x, &y);
-			//Check if the mouse is inside the destination rectangle
-			if (x > destinationRectangle.x && x < destinationRectangle.x + destinationRectangle.w && y > destinationRectangle.y && y < destinationRectangle.y + destinationRectangle.h) {
-				//Change the picture
-				if (sourceRectangle.x == 69) {
-					sourceRectangle.x = 0;
-					sourceRectangle.y = 0;
-				}
-				else {
-					sourceRectangle.x = 69;
-					sourceRectangle.y = 103;
-				}
-			}
-			//Task 5 Changes End 
+	while (SDL_PollEvent(&event)) {
+		if (event.type == SDL_QUIT) {
+			running = false;
+		}
+		else if (event.type == SDL_MOUSEBUTTONDOWN && event.button.button == SDL_BUTTON_LEFT) {
+			int windowWidth, windowHeight;
+			SDL_GetWindowSize(gameWindow, &windowWidth, &windowHeight);
+			int midX = windowWidth / 2;
+			int midY = windowHeight / 2;
+
+			int x = event.button.x;
+			int y = event.button.y;
+			int quadrant = (x > midX) + (y > midY) * 2;
+			currentQuadrant = (currentQuadrant == quadrant) ? -1 : quadrant;
 		}
 	}
 }
 
+//Task 5 Changes End
+
 //Update the game state and objects
 void Game::update() {
 
-	//Task 1 - Make the picture move from left to right and back
-	int ww, wh;
+	/*int ww, wh;
 	SDL_GetWindowSize(gameWindow, &ww, &wh);
 	destinationRectangle.y = (wh - destinationRectangle.h) / 2;
 
@@ -126,14 +153,14 @@ void Game::update() {
 
 		//Window boundaries
 		if ((destinationRectangle.x + destinationRectangle.w >= ww) || (destinationRectangle.x <= 0)) {
-			//speed *= -1; 
+			//speed *= -1;
 			//Change speed on each bounce
 			//if (speed < 0) speed--;
 			//else speed++;
 		}
-	}
+	}*/
 }
-//Task 1 End
+
 
 //Cleans up the game
 void Game::clean() {

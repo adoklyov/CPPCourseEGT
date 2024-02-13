@@ -5,8 +5,8 @@ using namespace std;
 
 //Window dimenstions and game state
 Game* game = NULL;
-const int WINDOW_WIDTH = 1000;
-const int WINDOW_HEIGHT = 800;
+const int WINDOW_WIDTH = 600;
+const int WINDOW_HEIGHT = 400;
 
 int main(int argc, char* argv[]) {
 

@@ -40,7 +40,7 @@ private:
     SDL_Rect destinationRectangle;
 
     //A variable to store the current quadrant
-    int currentQuadrant = -1;
+    int currentQuadrant = 0;
 
 };
 
