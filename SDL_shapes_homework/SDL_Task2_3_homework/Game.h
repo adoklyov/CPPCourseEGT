@@ -34,7 +34,7 @@ private:
     //Game running state
     bool running;
 
-    //SDL texture
+    /*SDL texture
     SDL_Texture* texture;
     //SDL rectangles for source and destination
     SDL_Rect sourceRectangle;
@@ -45,7 +45,7 @@ private:
     //Position of the picture
     SDL_Point picPos;
     //Mouse click check
-    bool isMousePressed;
+    bool isMousePressed;*/
 
 };
 
