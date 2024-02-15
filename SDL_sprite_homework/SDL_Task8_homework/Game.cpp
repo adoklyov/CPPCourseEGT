@@ -26,7 +26,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 			return false;
 		}
 
-		gameRenderer = SDL_CreateRenderer(gameWindow, -1, 0);
+		gameRenderer = SDL_CreateRenderer(gameWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 		if (gameRenderer == nullptr) {
 			return false;
 		}
@@ -36,7 +36,7 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 		}
 
 		//Load the sprite texture 
-		bool textureLoaded = TextureManager::Instance()->loadTexture("C:/Users/Doklyov/Desktop/IChernevTask/SDLTask8/assets/images/sprite.png", "sprite", gameRenderer);
+		bool textureLoaded = TextureManager::Instance()->loadTexture("C:/Users/Doklyov/Desktop/IChernevTask/SDLTask8/assets/images/sprite2.png", "sprite", gameRenderer);
 		if (!textureLoaded) {
 			return false;
 		}
@@ -55,7 +55,7 @@ void Game::render() {
 	SDL_RenderClear(gameRenderer);
 
 	//Draw the sprite
-	TextureManager::Instance()->drawOneFrameFromTexture("sprite", 50, 50, frameWidth, frameHeight, spriteRow, currentFrame, gameRenderer);
+	TextureManager::Instance()->drawOneFrameFromTexture("sprite", 450, 350, frameWidth, frameHeight, spriteRow, currentFrame, gameRenderer, SDL_FLIP_NONE);
 
 	SDL_RenderPresent(gameRenderer);
 
@@ -79,9 +79,9 @@ void Game::update() {
 
 	//Update the frame based on the duration
 	Uint32 currentTime = SDL_GetTicks();
-	if (currentTime > frameStart + frameDuration) {
+	if (currentTime - lastFrame >= frameDuration) {
 		currentFrame = (currentFrame + 1) % frameCount;
-		frameStart = currentTime;
+		lastFrame = currentTime;
 	}
 
 }

@@ -36,12 +36,11 @@ private:
     bool running;
     //Frame attributes test
     int currentFrame = 0;
-    const int frameWidth = 100;
-    const int frameHeight = 100;
+    const int frameWidth = 65;
+    const int frameHeight = 65;
     const int spriteRow = 0;
-    const int frameCount = 6;
+    const int frameCount = 4;
     Uint32 frameDuration = 100;
-    Uint32 frameStart;
     Uint32 lastFrame = 0;
 
 };
