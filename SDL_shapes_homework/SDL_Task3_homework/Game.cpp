@@ -61,19 +61,9 @@ void Game::render() {
 	SDL_SetRenderDrawColor(gameRenderer, 0, 0, 0, 255);
 	SDL_RenderClear(gameRenderer);
 
-	//Draw a red pentagon
-	SDL_SetRenderDrawColor(gameRenderer, 255, 0, 0, 255);
-	Shapes::drawPentagon(gameRenderer, 200, 200, 50);
-
 	//Draw a blue hexagon
 	SDL_SetRenderDrawColor(gameRenderer, 0, 0, 255, 255);
 	Shapes::drawHexagon(gameRenderer, 400, 400, 50);
-
-	//Draw a green ellipse
-	SDL_SetRenderDrawColor(gameRenderer, 0, 255, 0, 255);
-	Shapes::drawEllipse(gameRenderer, 600, 600, 50, 100);
-
-	//Draw the empty rectangle
 
 	SDL_RenderPresent(gameRenderer);
 
