@@ -34,8 +34,15 @@ private:
     SDL_Renderer* gameRenderer = NULL;
     //Game running state
     bool running;
-    //Current frame
-    int currentFrame;
+    //Frame attributes test
+    int currentFrame = 0;
+    const int frameWidth = 100;
+    const int frameHeight = 100;
+    const int spriteRow = 0;
+    const int frameCount = 6;
+    Uint32 frameDuration = 100;
+    Uint32 frameStart;
+    Uint32 lastFrame = 0;
 
 };
 
