@@ -7,6 +7,7 @@ Game::Game() {
 	Game::gameWindow = NULL;
 	Game::gameRenderer = NULL;
 	Game::running = true;
+	Game::currentFrame = 0;
 
 }
 
@@ -57,15 +58,6 @@ bool Game::init(const char* title, int xpos, int ypos, int width, int height, in
 void Game::render() {
 
 
-	//Background color
-	SDL_SetRenderDrawColor(gameRenderer, 0, 0, 0, 255);
-	SDL_RenderClear(gameRenderer);
-
-	//Draw a red pentagon
-	SDL_SetRenderDrawColor(gameRenderer, 255, 0, 0, 255);
-	Shapes::drawPentagon(gameRenderer, 200, 200, 50);
-
-	SDL_RenderPresent(gameRenderer);
 
 }
 

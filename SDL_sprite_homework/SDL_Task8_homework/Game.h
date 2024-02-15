@@ -1,7 +1,8 @@
 #ifndef GAME_H
 #define GAME_H
 #include <SDL.h>
-#include "Shapes.h"
+#include <SDL_image.h>
+#include "TextureManager.h"
 
 using namespace std;
 
@@ -33,6 +34,8 @@ private:
     SDL_Renderer* gameRenderer = NULL;
     //Game running state
     bool running;
+    //Current frame
+    int currentFrame;
 
 };
 
