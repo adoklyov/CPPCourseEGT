@@ -1,6 +1,6 @@
 #include "SavingsAccount.h"
 
-// Constructor
+//Constructor
 SavingsAccount::SavingsAccount(double initialBalance, double rate)
 	: Account(initialBalance)
 {

@@ -1,6 +1,8 @@
 #include "Library.h"
 
 //Methods
+
+//Method to add a book to the library
 void Library::addBook(Book book)
 {
 	books.push_back(book);

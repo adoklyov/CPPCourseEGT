@@ -1,8 +1,6 @@
 #include "Employee.h"
-
 #include <iostream>
 
-using namespace std;
 
 //Constructor
 Employee::Employee(string name, int ID, string position){

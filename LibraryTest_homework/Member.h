@@ -9,6 +9,7 @@ using namespace std;
 class Member
 {
 public:
+
 	//Constructor
 	Member(string name,int age, string id);
 	

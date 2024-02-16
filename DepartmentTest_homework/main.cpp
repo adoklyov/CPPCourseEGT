@@ -1,8 +1,5 @@
 #include "Employee.h"
 #include "Department.h"
-#include <iostream>
-
-using namespace std;
 
 int main()
 {

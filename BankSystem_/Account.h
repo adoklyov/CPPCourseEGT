@@ -12,7 +12,7 @@ public:
 	virtual void credit(double);
 	virtual void debit(double);
 
-	//Getters and setters
+	//Balance getter
 	double getBalance() const;
 
 protected:

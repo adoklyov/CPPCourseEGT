@@ -95,18 +95,6 @@ void Date::helpIncrement()
         } // end else
 } // end function helpIncrement
 
-// overloaded output operator
-/*ostream& operator<<(ostream& output, const Date& d)
-{
-    static const char* monthName[13] = { "", "January", "February",
-       "March", "April", "May", "June", "July", "August",
-       "September", "October", "November", "December" };
-    output << monthName[d.month] << ' ' << d.day << ", " << d.year;
-    return output; // enables cascading
-} // end function operator<<
-*/
-
-
 //Homework Task Code Begins Here--------------------------------------------
 //Overloaded prefix decrement operator
 Date& Date::operator--()

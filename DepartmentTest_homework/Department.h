@@ -1,8 +1,6 @@
 #ifndef DEPARTMENT_H
 #define DEPARTMENT_H
-
 #include "Employee.h"
-
 #include <string>
 
 class Department

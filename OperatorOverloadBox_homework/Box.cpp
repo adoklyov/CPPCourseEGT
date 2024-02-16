@@ -39,8 +39,6 @@ double Box::getLength() const
 	return length;
 }
 
-//Operator
-
 //Overloaded addition operator
 Box Box::operator+(const Box& box) const
 {

@@ -40,7 +40,7 @@ void Account::debit(double amount)
 	}
 }
 
-//Getters and setters
+//Balance getter
 double Account::getBalance() const
 {
 	return balance;

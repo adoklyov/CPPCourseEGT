@@ -3,6 +3,7 @@
 
 class Box {
 public:
+
 	//Constructor
 	Box(double width, double length, double height);
 

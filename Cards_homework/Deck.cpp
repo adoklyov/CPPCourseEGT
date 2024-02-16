@@ -1,6 +1,5 @@
 #include "Deck.h"
 
-
 //Constructor
 Deck::Deck()
 {
@@ -41,7 +40,6 @@ void Deck::raffleShuffle()
 }
 
 //Method to print the deck
-
 void Deck::displayDeck() const
 {
 	for (const auto& card : deck)

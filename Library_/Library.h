@@ -14,6 +14,7 @@ public:
 	vector<Book> searchName(string name);
 	vector<Book> searchAuthor(string authorFullName);
 
+	//Attributes
 	vector<Book> books;
 };
 

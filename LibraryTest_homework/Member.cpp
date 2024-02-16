@@ -10,6 +10,8 @@ Member::Member(string name, int age, string id)
 }
 
 //Methods
+
+//Method to display member details
 void Member::displayMember()
 {
 	cout << "Name: " << name << endl;
@@ -17,6 +19,7 @@ void Member::displayMember()
 	cout << "ID: " << id << endl;
 }
 
+//Method to borrow a book
 void Member::borrowBook(Book* book)
 {
 	cout << "Borrowing book:" << endl;
